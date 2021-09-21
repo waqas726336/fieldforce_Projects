@@ -1,0 +1,102 @@
+{
+  "Employees": [
+    {
+      "id": 1,
+      "firstName": "Rajendra",
+      "lastName": "pote",
+      "email": "rajupote@gmail.com",
+      "mobile": 982221958,
+      "salary": 200000
+    },
+    {
+      "id": 2,
+      "firstName": "sumit",
+      "lastName": "pote",
+      "email": "sumitpote@gmail.com",
+      "mobile": 9822021958,
+      "salary": 20000
+    },
+    {
+      "id": 3,
+      "firstName": "ashu",
+      "lastName": "pote",
+      "email": "ashupote@gmail.com",
+      "mobile": 2658958523,
+      "salary": 200000
+    },
+    {
+      "id": 4,
+      "firstName": "atul",
+      "lastName": "Baroakr",
+      "email": "atul23@gmail.com",
+      "mobile": 123654789,
+      "salary": 200
+    },
+    {
+      "id": 5,
+      "firstName": "naru",
+      "lastName": "ganu",
+      "email": "naru@gmil.com",
+      "mobile": 125698,
+      "salary": 1234
+    },
+    {
+      "id": 6,
+      "firstName": "prachi",
+      "lastName": "bhongale",
+      "email": "prachi@gmail.com",
+      "mobile": 789654123,
+      "salary": 63985244
+    },
+    {
+      "id": 7,
+      "firstName": "nilesh",
+      "lastName": "bhongale",
+      "email": "nilu@gmail.com",
+      "mobile": 12654,
+      "salary": 2365
+    },
+    {
+      "id": 8,
+      "firstName": "prachi",
+      "lastName": "khadkodkar",
+      "email": "prachi@gmail.com",
+      "mobile": 125698,
+      "salary": 2365
+    },
+    {
+      "id": 9,
+      "firstName": "atul",
+      "lastName": "barokar",
+      "email": "atul@gmail.com",
+      "mobile": 97723,
+      "salary": 20325
+    },
+    {
+      "id": 10,
+      "firstName": "vaibhav",
+      "lastName": "gaju",
+      "email": "vaibhav123",
+      "mobile": 123654,
+      "salary": 2323
+    },
+    {
+      "id": 11,
+      "firstName": "nikhil",
+      "lastName": "arora",
+      "email": "nikhil.arora@gmail.com",
+      "mobile": 456982,
+      "salary": 123654
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
