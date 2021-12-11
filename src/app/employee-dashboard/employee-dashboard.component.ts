@@ -3,7 +3,7 @@ import { FormBuilder,FormGroup } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
 import { EmployeeModel } from './employee-model';
 import {MessageService} from 'primeng/api';
-
+import { FormArray, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-employee-dashboard',
@@ -17,6 +17,8 @@ export class EmployeeDashboardComponent implements OnInit {
   formvalue !:FormGroup;
   employeeData:any;
   EmployeemodelObj:EmployeeModel = new EmployeeModel()
+  userForm:any;
+  
   constructor(private formbuild:FormBuilder , private _api:ApiService,private messageService: MessageService) { }
 
   showSuccess() {
@@ -25,13 +27,17 @@ export class EmployeeDashboardComponent implements OnInit {
 }
 
   ngOnInit(): void {
+    this.buildForm();
+    this.addUser();
     this.formvalue=this.formbuild.group({
       firstName:[''],
       lastName:[''],
       email:[''],
       mobile:[''],
-      salary:['']
-    })
+      salary:[''],
+ 
+    
+  })
 
     this.getEmployeeData();
 
@@ -98,5 +104,20 @@ export class EmployeeDashboardComponent implements OnInit {
   this._api.updateEmployee(this.EmployeemodelObj.id,this.EmployeemodelObj).subscribe(res=>{
      alert("data updated successfully")
     })
+  }
+  buildForm() {
+    this.userForm = new FormGroup({
+      users: new FormArray([])
+    })
+  }
+
+  addUser() {
+    const add = this.userForm.get('users') as FormArray;
+    add.push(new FormControl(''));
+  }
+
+  removeUser(i:any) {
+    const remove = this.userForm.get('users') as FormArray;
+    remove.removeAt(i);
   }
 }

@@ -1,9 +1,15 @@
+
+
 <nav class="navbar navbar-light bg-primary">
     <div class="container-fluid">
-        <h1 style="color: aliceblue;">Angular CRUD</h1>
+        <h1 style="color: aliceblue;">Contact Book</h1>
         <div class="d-flex">
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                (click)="showAdd()">Add Employee</button>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-dark" type="submit">Search</button>
+              </form>
+            <button class="btn btn-success mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                (click)="showAdd()">Add Contact</button>
         </div>
     </div>
 </nav>
@@ -15,7 +21,7 @@
             <th scope="col">Last Name</th>
             <th scope="col">Email Id</th>
             <th scope="col">Mobile No</th>
-            <th scope="col">Salary</th>
+            <th scope="col">address</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -71,9 +77,26 @@
                         <input type="number" formControlName="mobile" class="form-control" id="InputMobile"
                             aria-describedby="MobileHelp">
                     </div>
+                    <div>
+                        <form [formGroup]="userForm">
+                            <div formArrayName='users' fxLayout="column" fxLayoutGap="10px">
+                             
+                              <div *ngFor="let user of userForm.get('users')['controls']; let i = index" fxLayout="row" fxLayoutGap="10px">
+                                <input type="text" class="form-control" [formControlName]="i">
+                                <br>
+                                <button (click)="removeUser(i)"  class="btn btn-dark">-</button>
+                              </div>
+                            </div><br>
+                            <button (click)="addUser()" class="btn btn-dark">+</button>
+                          </form>
+                    </div>
+                    
+
+                    
+                    <br><br>
                     <div class="mb-3">
-                        <label for="InputSalary" class="form-label">Salary</label>
-                        <input type="number" formControlName="salary" class="form-control" id="InputSalary"
+                        <label for="InputSalary" class="form-label">Address</label>
+                        <input type="text" formControlName="salary" class="form-control" id="InputSalary"
                             aria-describedby="SalaryHelp">
                     </div>
 
@@ -90,3 +113,4 @@
         </div>
     </div>
 </div>
+

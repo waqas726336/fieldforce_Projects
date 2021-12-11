@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "firstName": "waqas",
+      "lastName": "ahmed",
+      "email": "waqas@gmail.com",
+      "mobile": 3066922077,
+      "salary": "pakpattan"
+    },
+    {
+      "id": 2,
+      "firstName": "ahmed",
+      "lastName": "waqas",
+      "email": "ahmed@gmail.com",
+      "mobile": 3066922077,
+      "salary": "pakpattan"
+    },
+    {
+      "id": 3,
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "mobile": "",
+      "salary": ""
+    }
+  ]
+}
