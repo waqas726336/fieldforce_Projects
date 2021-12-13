@@ -4,7 +4,9 @@ export class EmployeeModel {
     lastName:string = "";
     email:string = "";
     mobile:number = 0;
-    salary:number = 0;
+    DOB: Date | undefined;
+    address:number = 0;
+    i:number=0;
 
     
 }

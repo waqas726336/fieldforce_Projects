@@ -1,28 +1,66 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": 4,
+      "firstName": "ateeb",
+      "lastName": "rasheed",
+      "email": "ateeb@gmail.com",
+      "mobile": 3066922077,
+      "address": "renala",
+      "i": "",
+      "DOB": "2021-12-14"
+    },
+    {
+      "id": 9,
+      "firstName": "waqas",
+      "lastName": "ahmed",
+      "email": "waqas.ahmed@getfieldforce.com",
+      "mobile": 3066922077,
+      "address": "lahore",
+      "i": [
+        "03124334016"
+      ],
+      "DOB": "2021-12-14"
+    },
+    {
+      "id": 10,
       "firstName": "waqas",
       "lastName": "ahmed",
       "email": "waqas@gmail.com",
-      "mobile": 3066922077,
-      "salary": "pakpattan"
+      "mobile": 3066465465,
+      "address": "lahore",
+      "i": [],
+      "DOB": "2021-12-10"
     },
     {
-      "id": 2,
+      "id": 11,
       "firstName": "ahmed",
-      "lastName": "waqas",
-      "email": "ahmed@gmail.com",
+      "lastName": "ali",
+      "email": "waqas@gmail.com",
       "mobile": 3066922077,
-      "salary": "pakpattan"
+      "address": "quetta",
+      "i": [],
+      "DOB": "2021-12-14"
     },
     {
-      "id": 3,
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "mobile": "",
-      "salary": ""
+      "id": 12,
+      "firstName": "we",
+      "lastName": "ahmed",
+      "email": "waqas@gmail.com",
+      "mobile": 2316548989,
+      "address": "lahore",
+      "i": [],
+      "DOB": "2021-12-14"
+    },
+    {
+      "id": 13,
+      "firstName": "waqas",
+      "lastName": "ahmed",
+      "email": "waqas@gmail.com",
+      "mobile": 1545646465,
+      "address": "lahore",
+      "i": [],
+      "DOB": "2021-12-14"
     }
   ]
 }

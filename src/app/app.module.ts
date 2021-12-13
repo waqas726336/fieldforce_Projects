@@ -12,12 +12,12 @@ import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashbo
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeDashboardComponent
-
-  ],
+    EmployeeDashboardComponent ],
   imports: [
     BrowserModule,
     AppRoutingModule,

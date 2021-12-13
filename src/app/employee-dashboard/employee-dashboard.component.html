@@ -2,12 +2,13 @@
 
 <nav class="navbar navbar-light bg-primary">
     <div class="container-fluid">
-        <h1 style="color: aliceblue;">Contact Book</h1>
+        <h1 style="color: aliceblue;">Contact Book System</h1>
         <div class="d-flex">
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-dark" type="submit">Search</button>
-              </form>
+                <!-- <input type="text" [(ngModel)]="email" placeholder="Serach any fields"/>   -->
+            </form>
             <button class="btn btn-success mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal"
                 (click)="showAdd()">Add Contact</button>
         </div>
@@ -21,6 +22,7 @@
             <th scope="col">Last Name</th>
             <th scope="col">Email Id</th>
             <th scope="col">Mobile No</th>
+            <th scope="col">DOB</th>
             <th scope="col">address</th>
             <th scope="col">Action</th>
         </tr>
@@ -32,13 +34,16 @@
             <td>{{empdata.firstName}}</td>
             <td>{{empdata.lastName}}</td>
             <td>{{empdata.email}}</td>
-            <td>{{empdata.mobile}}</td>
-            <td>{{empdata.salary}}</td>
+            <td>{{empdata.mobile}} <br> {{ empdata.i}}</td>
+            <td>{{empdata.DOB}}</td>
+            <td>{{empdata.address}}</td>
             <td>
-                <button type="button" class="btn btn-info cust_marg" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal" (click)="editEmployeeData(empdata)">Edit</button>
-                <button type="button" class="btn btn-danger cust_marg" (click)="deleteEmployeeData(empdata)">Delete
-                </button>
+                <button type="button" class="btn btn-info cust_marg mx-2" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" (click)="editEmployeeData(empdata)">Update</button>
+                <button type="button" class="btn btn-danger cust_marg mx-2" (click)="deleteEmployeeData(empdata)">Delete
+                </button> 
+                <button type="button" class="btn btn-warning cust_marg mx-2" >View</button>
+                
             </td>
         </tr>
 
@@ -52,39 +57,56 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Contact Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form [formGroup]="formvalue">
                     <div class="mb-3">
-                        <label for="InputFname" class="form-label">First Name</label>
-                        <input type="text" formControlName="firstName" class="form-control" id="InputFname"
-                            aria-describedby="FnameHelp">
+                        <label for="InputFname"   class="form-label">First Name</label>
+                        <input type="text" formControlName="firstName"  class="form-control" id="InputFname"
+                            aria-describedby="FnameHelp"   >
                     </div>
+
+                    <span style="color: red;" *ngIf="firstnamegetter && firstnamegetter.invalid && firstnamegetter.touched"
+                    >Write First Name</span
+                  >
+                   
+                    
                     <div class="mb-3">
                         <label for="InputLname" class="form-label">Last Name</label>
                         <input type="text" formControlName="lastName" class="form-control" id="InputLname"
-                            aria-describedby="LnameHelp">
+                            aria-describedby="LnameHelp"  >
+                            <span style="color: red;" *ngIf="lastnamegetter && lastnamegetter.invalid && lastnamegetter.touched"
+                    >Write Last Name</span
+                  >
                     </div>
                     <div class="mb-3">
                         <label for="InputEmail1" class="form-label">Email address</label>
                         <input type="email" formControlName="email" class="form-control" id="InputEmail1"
                             aria-describedby="emailHelp">
                     </div>
+                    <span style="color: red;" *ngIf="emailgetter && emailgetter.invalid && emailgetter.touched"
+                    >please write email correctly</span
+                  >
                     <div class="mb-3">
                         <label for="InputMobile" class="form-label">Mobile Number</label>
-                        <input type="number" formControlName="mobile" class="form-control" id="InputMobile"
-                            aria-describedby="MobileHelp">
+                        <input type="number" formControlName="mobile" class="form-control"  id="InputMobile"
+                            aria-describedby="MobileHelp" >
                     </div>
+                    <span style="color: red;" *ngIf="mobilegetter && mobilegetter.invalid && mobilegetter.touched"
+                    >please write number</span
+                  >
+                   
                     <div>
                         <form [formGroup]="userForm">
                             <div formArrayName='users' fxLayout="column" fxLayoutGap="10px">
                              
                               <div *ngFor="let user of userForm.get('users')['controls']; let i = index" fxLayout="row" fxLayoutGap="10px">
+                               <br>
                                 <input type="text" class="form-control" [formControlName]="i">
-                                <br>
-                                <button (click)="removeUser(i)"  class="btn btn-dark">-</button>
+                                <br> <br>
+                                <button (click)="removeUser(i)"  class="btn btn-dark">-</button> 
                               </div>
                             </div><br>
                             <button (click)="addUser()" class="btn btn-dark">+</button>
@@ -95,18 +117,26 @@
                     
                     <br><br>
                     <div class="mb-3">
-                        <label for="InputSalary" class="form-label">Address</label>
-                        <input type="text" formControlName="salary" class="form-control" id="InputSalary"
-                            aria-describedby="SalaryHelp">
+                        <label for="dob" class="form-label">DOB</label>
+                        <input type="date" formControlName="DOB" class="form-control" id="DOB" >
+
                     </div>
+                    <div class="mb-3">
+                        <label for="Inputaddress" class="form-label">Address</label>
+                        <input type="text" formControlName="address" class="form-control" id="Inputaddress"
+                            aria-describedby="addressHelp">
+                    </div>
+                    <span style="color: red;" *ngIf="addressgetter && addressgetter.invalid && addressgetter.touched"
+                    >Address is required</span
+                  >
 
 
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" [hidden]="hideAdd"
-                    (click)="postEmployeeDetails()">Add</button>
+                <button type="button" [disabled]="formvalue.invalid"  class="btn btn-primary" [hidden]="hideAdd"
+                    (click)="postEmployeeDetails()" >Add</button>
                 <button type="button" class="btn btn-primary" [hidden]="hideUpdate"
                     (click)="UpdateEmployeeDetails()">Update</button>
             </div>
